@@ -22,6 +22,15 @@ export default function TextForms(props) {
         // console.log("On change");
         setText(event.target.value);
     }
+    const handleCopy = ()=>{
+        let text =document.getElementById("Mybox");
+        text.select();
+        navigator.clipboard.writeText(text.value)
+    }
+    const handleExtraSpace = ()=>{
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "))
+    }
 
     function wordCount(){
         let words;
@@ -68,6 +77,10 @@ export default function TextForms(props) {
                 <button className="btn btn-primary" onClick={handleUpClick}> Convert to Uppercase</button>
                 <button className="btn btn-primary mx-3" onClick={handleLoClick}> Convert to Lowercase</button>
                 <button className="btn btn-primary mx-1" onClick={ClearText}> Clear text</button>
+                <button className="btn btn-primary mx-1" onClick={handleCopy}> Copy text</button>
+                <button className="btn btn-primary mx-1" onClick={handleExtraSpace}> Remove Extra Space</button>
+
+
 
                 
 
