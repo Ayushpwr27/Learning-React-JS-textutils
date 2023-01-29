@@ -65,31 +65,25 @@ export default function TextForms(props) {
         
     return (
         <>
-            <div className='container'>
+            <div className='container'style={{color: props.mode==='dark'?'white':'#34383e'}}>
                 <div className="mb-3 my-5">
                 <h1>{props.heading} </h1>
-                <textarea className="form-control" value={text} onChange={handleOnChange} id="Mybox" rows="3"></textarea>
+                <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#34383e':'white',color: props.mode==='dark'?'white':'#34383e'}} id="Mybox" rows="3"></textarea>
                 </div>
                 <button className="btn btn-primary" onClick={handleUpClick}> Convert to Uppercase</button>
                 <button className="btn btn-primary mx-3" onClick={handleLoClick}> Convert to Lowercase</button>
                 <button className="btn btn-primary mx-1" onClick={ClearText}> Clear text</button>
                 <button className="btn btn-primary mx-1" onClick={handleCopy}> Copy text</button>
                 <button className="btn btn-primary mx-1" onClick={handleExtraSpace}> Remove Extra Space</button>
-
-
-
-                
-
-
             </div>
-            <div className="container my-3">
+            <div className="container my-3"style={{color: props.mode==='dark'?'white':'#34383e'}}>
                 <h1>Your Text Summary</h1>
                 <p>{wordCount()} words and {text.length} Characters</p>
                 <p>{readingTime()} Minutes read</p>
                 <p>{sentenceCount()} Sentence</p>
 
                 <h2>Preview</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Enter Something in textbox above to preview"}</p>
             </div>
 
         </>
