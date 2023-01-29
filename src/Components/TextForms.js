@@ -5,21 +5,17 @@ import React,{useState}from 'react'
 export default function TextForms(props) {
 
     const handleUpClick =() =>{
-            // console.log("Uppercase was clicked" + text);
             let newText = text.toUpperCase();
             setText(newText)
     }
     const handleLoClick =() =>{
-        // console.log("Uppercase was clicked" + text);
         let newText = text.toLowerCase();
         setText(newText)
     }
     const ClearText =() =>{
-        // console.log("Uppercase was clicked" + text);
         setText('')
     }
     const handleOnChange =(event) =>{
-        // console.log("On change");
         setText(event.target.value);
     }
     const handleCopy = ()=>{
