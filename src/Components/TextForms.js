@@ -7,13 +7,16 @@ export default function TextForms(props) {
     const handleUpClick =() =>{
             let newText = text.toUpperCase();
             setText(newText)
+            props.showAlert(" : Converted to Uppercase!","success");
     }
     const handleLoClick =() =>{
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert(" : Converted to Lowerercase!","success");
     }
     const ClearText =() =>{
         setText('')
+        props.showAlert(" : Text Cleared","success");
     }
     const handleOnChange =(event) =>{
         setText(event.target.value);
@@ -22,10 +25,12 @@ export default function TextForms(props) {
         let text =document.getElementById("Mybox");
         text.select();
         navigator.clipboard.writeText(text.value)
+        props.showAlert(" : Text Copied to clipboard","success");
     }
     const handleExtraSpace = ()=>{
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert(" : Extra spaces removed","success");
     }
 
     function wordCount(){
