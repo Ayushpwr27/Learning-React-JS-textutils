@@ -37,16 +37,7 @@ export default function TextForms(props) {
         setText(event.target.value);
     }
     const handleCopy = ()=>{
-        let text =document.getElementById("Mybox");
-        text.select();
-        navigator.clipboard.writeText(text.value)
-        document.getSelection().removeAllRanges();
-        if (text === "") {
-            return 0
-        }
-        else{
-            props.showAlert(" : Text Copied to clipboard","success");
-        }
+        navigator.clipboard.writeText(text) 
     }
     const handleExtraSpace = ()=>{
         let newText = text.split(/[ ]+/);
@@ -89,7 +80,7 @@ export default function TextForms(props) {
             </div>
             <div className="container my-3"style={{color: props.mode==='dark'?'white':'#34383e'}}>
                 <h1>Your Text Summary</h1>
-                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} Characters</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} Characters</p>
                 <p>{0.008 *text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
                 <p>{sentenceCount()} Sentence</p>
                 <h2>Preview</h2>
