@@ -1,1 +1,7 @@
-
+nav{
+    border-bottom: 4px solid;
+}
+.form-check-input:checked {
+    background-color: red;
+    border-color: red;
+}
