@@ -7,7 +7,6 @@ export default function TextForms(props) {
     const handleUpClick =() =>{
             let newText = text.toUpperCase();
             setText(newText)
-            // props.showAlert(" : Converted to Uppercase!","success");
             if (text === "") {
                 return 0
             }
@@ -18,7 +17,6 @@ export default function TextForms(props) {
     const handleLoClick =() =>{
         let newText = text.toLowerCase();
         setText(newText)
-        // props.showAlert(" : Converted to Lowerercase!","success");
         if (text === "") {
             return 0
         }
@@ -28,7 +26,6 @@ export default function TextForms(props) {
     }
     const ClearText =() =>{
         setText('')
-        // props.showAlert(" : Text Cleared","success");
         if (text === "") {
             return 0
         }
@@ -44,7 +41,6 @@ export default function TextForms(props) {
         text.select();
         navigator.clipboard.writeText(text.value)
         document.getSelection().removeAllRanges();
-        // props.showAlert(" : Text Copied to clipboard","success");
         if (text === "") {
             return 0
         }
@@ -96,11 +92,9 @@ export default function TextForms(props) {
                 <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} Characters</p>
                 <p>{0.008 *text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
                 <p>{sentenceCount()} Sentence</p>
-
                 <h2>Preview</h2>
                 <p>{text.length>0?text:"Nothing To preview"}</p>
             </div>
-
         </>
     )
 }
